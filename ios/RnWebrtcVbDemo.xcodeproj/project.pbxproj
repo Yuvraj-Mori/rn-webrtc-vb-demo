@@ -38,6 +38,9 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = RnWebrtcVbDemo/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-RnWebrtcVbDemo-RnWebrtcVbDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RnWebrtcVbDemo-RnWebrtcVbDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-RnWebrtcVbDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RnWebrtcVbDemo.debug.xcconfig"; path = "Target Support Files/Pods-RnWebrtcVbDemo/Pods-RnWebrtcVbDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		477FBC9629A74B8800404EDB /* MLKitSegmentationCommonResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = MLKitSegmentationCommonResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		477FBC9729A74B8800404EDB /* MLKitSegmentationSelfieResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = MLKitSegmentationSelfieResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		477FBC9829A74B8800404EDB /* MLKitXenoResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = MLKitXenoResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		5709B34CF0A7D63546082F79 /* Pods-RnWebrtcVbDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RnWebrtcVbDemo.release.xcconfig"; path = "Target Support Files/Pods-RnWebrtcVbDemo/Pods-RnWebrtcVbDemo.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-RnWebrtcVbDemo-RnWebrtcVbDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RnWebrtcVbDemo-RnWebrtcVbDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-RnWebrtcVbDemo-RnWebrtcVbDemoTests/Pods-RnWebrtcVbDemo-RnWebrtcVbDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-RnWebrtcVbDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RnWebrtcVbDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +102,9 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				477FBC9629A74B8800404EDB /* MLKitSegmentationCommonResources.bundle */,
+				477FBC9729A74B8800404EDB /* MLKitSegmentationSelfieResources.bundle */,
+				477FBC9829A74B8800404EDB /* MLKitXenoResources.bundle */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				5DCACB8F33CDC322A6C60F78 /* libPods-RnWebrtcVbDemo.a */,
 				19F6CBCC0A4E27FBF8BF4A61 /* libPods-RnWebrtcVbDemo-RnWebrtcVbDemoTests.a */,
@@ -486,6 +492,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MMUXZTMZWN;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = RnWebrtcVbDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -512,6 +519,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MMUXZTMZWN;
 				INFOPLIST_FILE = RnWebrtcVbDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -562,7 +570,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -596,6 +604,7 @@
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -633,7 +642,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -659,6 +668,7 @@
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

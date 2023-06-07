@@ -7,12 +7,13 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "update:webrtc": "npm update react-native-webrtc"
   },
   "dependencies": {
     "react": "18.1.0",
     "react-native": "0.70.6",
-    "react-native-webrtc":"Yuvraj-Mori/React-Native-Webrtc-VB#custom-vb-image"
+    "react-native-webrtc": "github:Yuvraj-Mori/React-Native-Webrtc-VB"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

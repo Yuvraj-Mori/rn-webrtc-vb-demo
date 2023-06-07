@@ -33,11 +33,15 @@ const camConstraint = {
     frameRate: 30,
     // facingMode: { exact: 'environment' },
     facingMode: { exact: 'user' },
-    width: 720,
-    height: 480,
+    //width: 1280,
+    //height: 720,
+    //width:{ideal:360},height:{ideal:240},frameRate:{ideal:30},
+    width: 360,
+    height: 240,
     // vbBackgroundImage: require("./assets/1.jpg"),
     vbFrameSkip: 0,
-    vbBlurValue: 13
+    vbBlurValue: 13,
+    vb: false
   }
 }
 
@@ -53,37 +57,61 @@ const VB_Image_Data = [
     type: VB_IMAGE_TYPE.Blur,
     value: 5,
     text: 'Blur',
-    imgData: require("./assets/7.png")
+    imgData: require("./assets/vb/blur.png")
   },
   {
     type: VB_IMAGE_TYPE.Blur,
     value: 13,
     text: 'Very Blur',
-    imgData: require("./assets/7.png")
+    imgData: require("./assets/vb/blur.png")
   },
   {
     type: VB_IMAGE_TYPE.Image,
-    imgData: require("./assets/1.jpg"),
+    imgData: require("./assets/vb/1.jpg"),
   },
   {
     type: VB_IMAGE_TYPE.Image,
-    imgData: require("./assets/2.jpg"),
+    imgData: require("./assets/vb/2.jpg"),
   },
   {
     type: VB_IMAGE_TYPE.Image,
-    imgData: require("./assets/3.jpg"),
+    imgData: require("./assets/vb/3.jpg"),
   },
   {
     type: VB_IMAGE_TYPE.Image,
-    imgData: require("./assets/4.jpg"),
+    imgData: require("./assets/vb/4.jpg"),
   },
   {
     type: VB_IMAGE_TYPE.Image,
-    imgData: require("./assets/5.jpg"),
+    imgData: require("./assets/vb/5.jpg"),
   },
   {
     type: VB_IMAGE_TYPE.Image,
-    imgData: require("./assets/6.png"),
+    imgData: require("./assets/vb/6.jpg"),
+  },
+  {
+    type: VB_IMAGE_TYPE.Image,
+    imgData: require("./assets/vb/7.jpg"),
+  },
+  {
+    type: VB_IMAGE_TYPE.Image,
+    imgData: require("./assets/vb/8.jpg"),
+  },
+  {
+    type: VB_IMAGE_TYPE.Image,
+    imgData: require("./assets/vb/9.jpg"),
+  },
+  {
+    type: VB_IMAGE_TYPE.Image,
+    imgData: require("./assets/vb/10.jpg"),
+  },
+  {
+    type: VB_IMAGE_TYPE.Image,
+    imgData: require("./assets/vb/11.jpg"),
+  },
+  {
+    type: VB_IMAGE_TYPE.Image,
+    imgData: require("./assets/vb/12.png"),
   },
 ]
 
@@ -164,9 +192,9 @@ const App = () => {
           {stream ?
             (
               <RTCView
-                objectFit={'contain'}
+                objectFit={'cover'}
                 streamURL={stream.toURL()}
-                style={[styles.stream, { width: 350, height: 800, alignSelf: "center" }]}
+                style={[styles.stream, { width: 350, height: 800, alignSelf: "center", minWidth: 370, minHeight: 400 }]}
                 zOrder={1}
               />
             ) : null
@@ -187,8 +215,9 @@ const App = () => {
               horizontal={true}
               contentContainerStyle={{
                 position: "absolute", bottom: 0,
-                display: "flex", flexDirection: "row", flexWrap: "nowrap", marginTop: 20
+                display: "flex", flexDirection: "row", flexWrap: "nowrap", marginTop: 20,
               }}
+              style={{ minHeight: 150 }}
               persistentScrollbar={true} >
 
               {
@@ -200,7 +229,7 @@ const App = () => {
                     style={{ width: 100, height: 100, marginHorizontal: 10 }} />
                   {
                     data.type === VB_IMAGE_TYPE.Blur &&
-                    <Text style={{ fontSize: 12, fontWeight: "500", alignSelf:"center" }}> {data.text}</Text>
+                    <Text style={{ fontSize: 12, fontWeight: "500", alignSelf: "center" }}> {data.text}</Text>
                   }
                 </TouchableOpacity>)
               }
@@ -245,7 +274,7 @@ const App = () => {
 
 const styles = StyleSheet.create({
   body: { backgroundColor: 'white' },
-  stream: { flex: 1, padding: 44 },
+  stream: { flex: 1, padding: 10 },
   footer: { width: '100%', padding: 30, display: "flex", flexDirection: "row", justifyContent: "space-between" },
   btn: { paddingHorizontal: 20, paddingVertical: 5, borderRadius: 5 },
   btnTxt: { color: Colors.white, textAlign: 'center', fontSize: 20 },
